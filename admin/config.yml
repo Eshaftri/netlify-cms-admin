@@ -3,6 +3,8 @@ backend:
   branch: master # Branch to update (master by default)
   repo: eshaftri/netlify-cms-admin # Path to your Github repository
   api_root: https://api.github.ibm.com
+  base_url: https://api.netlify.com
+
 
 media_folder: "uploads" # Folder where user uploaded files should go
 
