@@ -1,17 +1,14 @@
 backend:
   name: github
   branch: master # Branch to update (master by default)
-  repo: eshaftri/netlify-cms-admin # Path to your Github repository
-  # api_root: https://api.github.ibm.com
-  # base_url: https://api.netlify.com
-
+  repo: Eshaftri/netlify-cms-admin # Path to your Github repository
 
 media_folder: "uploads" # Folder where user uploaded files should go
 
 collections: # A list of collections the CMS should be able to edit
   - name: "sme" # Used in routes, e.g., /admin/collections/:slug/edit
     label: "SME(s)" # Used in the UI, e.g., "New Post"
-    folder: "/content/sme" # The path to the folder where the documents are stored
+    folder: "content/sme" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     fields: # The fields each document in this collection have
       - { label: "Title", name: "title", widget: "string", tagname: "h1" }
