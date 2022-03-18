@@ -2,6 +2,7 @@ backend:
   name: git-gateway
   branch: master # Branch to update (master by default)
   repo: eshaftri/netlify-cms-admin # Path to your Github repository
+  api_root: https://api.github.ibm.com
 
 media_folder: "uploads" # Folder where user uploaded files should go
 
@@ -11,7 +12,7 @@ collections: # A list of collections the CMS should be able to edit
     folder: "/content/sme" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     fields: # The fields each document in this collection have
-      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Foo", name: "foo", widget: "foo"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - { label: "Title", name: "title", widget: "string", tagname: "h1" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Foo", name: "foo", widget: "foo" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
