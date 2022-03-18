@@ -1,7 +1,7 @@
 backend:
-  name: github
-  repo: eshaftri/netlify-cms-admin # Path to your Github repository
+  name: git-gateway
   branch: master # Branch to update (master by default)
+  repo: eshaftri/netlify-cms-admin # Path to your Github repository
 
 media_folder: "uploads" # Folder where user uploaded files should go
 
