@@ -1,5 +1,5 @@
 backend:
-  name: github
+  name: git-gateway
   branch: master # Branch to update (master by default)
   repo: Eshaftri/netlify-cms-admin # Path to your Github repository
 
@@ -10,6 +10,7 @@ collections: # A list of collections the CMS should be able to edit
     label: "SME(s)" # Used in the UI, e.g., "New Post"
     folder: "content/sme" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{slug}}"
     fields: # The fields each document in this collection have
       - { label: "Title", name: "title", widget: "string", tagname: "h1" }
       - { label: "Body", name: "body", widget: "markdown" }
