@@ -36,6 +36,23 @@ collections:
             widget: "select"
             multiple: true
             options: ["Automotive, aerospace, and defense", "Banking and financial markets", "Chemicals & Petroleum","Consumer"]
+  - name: "journeys"
+    label: "Journeys" 
+    folder: "content/journeys"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Publish Date", name: "date", widget: "date"}
+      - {label: Journey, name: journey, widget: hidden, default: "journey"}
+      - {label: "Title", name: "title", widget: "string", required: true}
+      - {label: Journey description, name: journey-description, widget: markdown, required: true}
+      - label: "SME(s)"
+        name: "sme"
+        widget: "relation"
+        collection: "sme"
+        search_fields: ["title"]
+        value_field: "title"
+        display_fields: ["title", "email"]
 
   - name: demos
     label: Demos
