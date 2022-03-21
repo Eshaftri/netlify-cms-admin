@@ -34,6 +34,7 @@ collections:
           - label: "Focus"
             name: "focus"
             widget: "select"
+            multiple: true
             options: ["Automotive, aerospace, and defense", "Banking and financial markets", "Chemicals & Petroleum","Consumer"]
 
   - name: demos
