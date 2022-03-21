@@ -24,6 +24,25 @@ collections:
       - {label: Sharing, name: share, widget: boolean, default: true}
       - {label: Type, name: type, widget: hidden, default: "post"}
       - {label: "Body", name: "body", widget: "markdown"}
+      - name: "profile"
+        widget: "object"
+        summary: '{{fields.name}}: {{fields.birthdate}}'
+        fields:
+          - {label: "Public", name: "public", widget: "boolean", default: true}
+          - {label: "Name", name: "name", widget: "string"}
+          - label: "Birthdate"
+            name: "birthdate"
+            widget: "date"
+            default: ""
+            format: "MM/DD/YYYY"
+          - label: "Address"
+            name: "address"
+            widget: "object"
+            collapsed: true
+            fields: 
+              - {label: "Street Address", name: "street", widget: "string"}
+              - {label: "City", name: "city", widget: "string"}
+              - {label: "Postal Code", name: "post-code", widget: "string"}
   - name: demos
     label: Demos
     description: "Demos document all operational and story information around a demo. Information from our demo collection is used to build all of our runbook, demoscript documentation as well as all content for our websites - both internal and external."
@@ -179,24 +198,4 @@ collections:
         widget: list
         hint: "Adding tags is entirely optional, but we may use them later to enrich the experience."
         required: false
-  - label: "Profile"
-  name: "profile"
-  widget: "object"
-  summary: '{{fields.name}}: {{fields.birthdate}}'
-  fields:
-    - {label: "Public", name: "public", widget: "boolean", default: true}
-    - {label: "Name", name: "name", widget: "string"}
-    - label: "Birthdate"
-      name: "birthdate"
-      widget: "date"
-      default: ""
-      format: "MM/DD/YYYY"
-    - label: "Address"
-      name: "address"
-      widget: "object"
-      collapsed: true
-      fields: 
-        - {label: "Street Address", name: "street", widget: "string"}
-        - {label: "City", name: "city", widget: "string"}
-        - {label: "Postal Code", name: "post-code", widget: "string"}
 
