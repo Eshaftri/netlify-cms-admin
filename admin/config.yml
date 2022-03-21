@@ -10,28 +10,34 @@ collections:
     label: "SME(s)" 
     folder: "content/sme"
     create: true
-    slug: "{{day}}-{{month}}-{{year}}-{{slug}}"
+    slug: "{{slug}}"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "date"}
-      - {label: "Draft", name: "draft", widget: "boolean", default: true}
-      - {label: "Categories", name: "categories", widget: "hidden", default: "SME(s)"}
-      - {label: "Tags", name: "tags", widget: "list", required: false}
-      - {label: Author, name: author, widget: hidden, default: Chris Stayte}
-      - {label: Author Image, name: authorImage, widget: hidden, default: "uploads/eshaftri_profilepic.png"}
-      - {label: "Header Image", name: image, widget: image, required: false}
-      - {label: Commenting, name: comments, widget: boolean, default: true}
-      - {label: Sharing, name: share, widget: boolean, default: true}
-      - {label: Type, name: type, widget: hidden, default: "post"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - label: "Speaker info"
-        name: "speaker-info"
+      - {label: SME(s), name: sme, widget: hidden, default: "sme"}
+      - {label: "Full Name", name: "title", widget: "string", required: true}
+      - {label: "Email", name: "email", widget: "string", required: true}
+      - {label: "Job title", name: "job-title", widget: "string", required: true}
+      - {label: "Is executive", name: "is-executive", widget: "boolean", default: true}
+      - {label: "Profile Image", name: profile-image, widget: image, required: true}
+      - label: "Alternative contact"
+        name: "alternative-contact"
         widget: "object"
         collapsed: true
-        fields: 
-          - {label: "Street Address", name: "street", widget: "string"}
-          - {label: "City", name: "city", widget: "string"}
-          - {label: "Postal Code", name: "post-code", widget: "string"}
+        fields:
+          - {label: "Full Name", name: "full-name", widget: "string"}
+          - {label: "Email", name: "email", widget: "string"}
+      - label: "Additional information"
+        name: "additional-information"
+        widget: "object"
+        collapsed: true
+        fields:
+          - label: "Focus"
+            name: "focus"
+            collapsed: false
+            widget: "list"
+            fields:
+              - {label: Quote, name: quote, widget: string, default: "Everything is awesome!"}
+              - {label: Author, name: author, widget: string }
   - name: demos
     label: Demos
     description: "Demos document all operational and story information around a demo. Information from our demo collection is used to build all of our runbook, demoscript documentation as well as all content for our websites - both internal and external."
