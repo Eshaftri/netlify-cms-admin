@@ -24,8 +24,161 @@ collections:
       - {label: Sharing, name: share, widget: boolean, default: true}
       - {label: Type, name: type, widget: hidden, default: "post"}
       - {label: "Body", name: "body", widget: "markdown"}
-
-
-    
+  - name: demos
+    label: Demos
+    description: "Demos document all operational and story information around a demo. Information from our demo collection is used to build all of our runbook, demoscript documentation as well as all content for our websites - both internal and external."
+    label_singular: 'Demo'
+    folder: content/demos
+    path: '{{title}}/index'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
+      - label: Template
+        name: template
+        widget: hidden
+        default: post
+      - label: Title
+        name: title
+        hint: "In order to be validated, the title must EXACTLY match a card that we have on the existing \"Demo Status - Lifecyle\" trello board"
+        widget: string
+      - label: Subtitle
+        name: subtitle
+        hint: "This gives your use a first glance into your demo"
+        widget: string
+      - label: "Author"
+        name: "author"
+        widget: "relation"
+        collection: "authors"
+        search_fields: ["fullname"]
+        value_field: "fullname"
+        display_fields: ["fullname", "email"]
+      - label: 'Cover Image'
+        name: 'image'
+        widget: 'image'
+        required: true
+      - label: Prerequisites
+        name: prerequisites
+        hint: "Content: contains a list of all physical devices needed for the demo. Format: list of devices preferred"
+        widget: markdown
+        required: false
+      - label: Cold Start
+        name: cold-start
+        widget: markdown
+        hint: "Content: step by step guide for the complete setup process, screenshots are highly recommended; must enable any lab member to setup the demo. Starting point: all devices are turned off. End point: the demo is ready to be presented. Format: (nested) list of steps preferred"
+        required: false
+      - label: Cold Stop
+        name: cold-stop
+        widget: markdown
+        hint: "Content: step by step guide for the complete shutdown process, screenshots are highly recommended; must enable any lab member to shutdown the demo; starting point: the demo is up and running; end point: all devices are turned off"
+        required: false
+      - label: Error
+        name: error
+        widget: markdown
+        hint: "Content: describes critical known errors / failures that lead to an unpresentable demo, also include how to fix them if known. Format: (nested) list of steps preferred"
+        required: false
+      - label: Warm Start
+        name: warm-start
+        widget: markdown
+        hint: "!!! IMPORTANT: Mandatory formatting, otherwise it won't show up in floorservice overview !!! Create unordered list of steps, one line per step starting with bullet point \"- \" !!! Content:  step by step guide on how the floorservice can get the demo ready to be presentable; must enable any lab member to start the demo from hibernating mode; starting point: the demo is hibernating; End point: the demo is ready to be presented. Format: each step as one line starting with bullet point \"- \" to create unordered list of steps"
+        required: false
+      - label: Warm Stop
+        name: warm-stop
+        widget: markdown
+        hint: "!!! IMPORTANT: Mandatory formatting, otherwise it won't show up in floorservice overview !!! Create unordered list of steps, one line per step starting with bullet point \"- \" !!! Content:  describes how the floorservice can put the demo in a hibernating mode; must enable any lab member to put the demo in hibernating mode; starting point: the demo is ready to be presented; End point: all screens are turned off, all devices are locked. Format: each step as one line starting with bullet point \"- \" to create unordered list of steps"
+        required: false
+      - label: Introduction
+        name: introduction
+        widget: markdown
+        hint: "Content: includes an introduction, the motivation and the business background for the use-case / demo. It should answer the question why the use-case / demo was build (former ‘motivation’ section of one pager).Format: Prosa text body is preferred, couple of lines"
+        required: false
+      - label: Flow Overview
+        name: flow-overview
+        widget: markdown
+        hint: "Content: description of which scenarios are included into the use-case / demo and respective key messages. Format: (nested/ordered) list of scenarios preferred"
+        required: false
+      - label: Flow Details
+        name: flow-details
+        widget: markdown
+        hint: "Content: must enable any lab member to present the use-case / demo. Step by step tutorial with images (what to do) and talking points (what to say) from the owning industry perspective. Scenarios which depend on each other are considered as one scenario with optional endings. Format: (nested/ordered) list of scenarios with explanations & images preferred"
+        required: false
+      - label: Pitfalls
+        name: pitfalls
+        widget: markdown
+        hint: "Content: typical issues that occur because of tour-guide mistakes or physical conditions (e.g. room lighting), also includes how to prevent/fix them. Format: (nested) list of pitfalls (with corresponding solution) preferred"
+        required: false
+      - label: Industry Stories
+        name: industry-stories
+        widget: markdown
+        hint: "Content: includes a story for each of the non-demo-owning industries, these stories explain why this use case / demo is relevant for the respective industry. Format: prosa text section per industry preferred"
+        required: false
+      - label: Benefits
+        name: benefits
+        widget: markdown
+        hint: "Content: business benefit of the use-case. What is the business potential of the use-case? (former ‘value’ section of one pager). Format: prosa text body preferred"
+        required: false
+      - label: Clients Disclosed
+        name: clients-disclosed
+        widget: markdown
+        hint: "Content:  clients + success stories that will be displayed externally. Format: list of clients with corresponding success story preferred"
+        required: false
+      - label: Clients Not Disclosed
+        name: clients-not-disclosed
+        widget: markdown
+        hint: "Content: clients + success stories that are only for internal display. Format: list of clients with corresponding success story preferred"
+        required: false
+      - label: IBM Products
+        name: ibm-products
+        widget: markdown
+        hint: "Content: includes IBM products & services from a story perspective"
+        required: false
+      - label: Technical Overview
+        name: technical-overview
+        widget: markdown
+        hint: "Content: technical summary of the use-case / demo including architecture, third party software, consumed services etc. Format: (nested) list of services preferred"
+        required: false
+      - label: Solution Overview
+        name: solution-overview
+        widget: markdown
+        hint: "Content: includes a summary for each scenario in which the respective IBM solution usage is described (former ‘our solution’ section of one pager). Format: prosa text body preferred, couple of lines"
+        required: false
+      - label: Solution Details
+        name: solution-details
+        widget: markdown
+        hint: "Content: detailed description for each scenario which covers how the IBM solution was used (former ‘how it works’ section of one pager). Format: prosa text body preferred, couple of lines"
+        required: false
+      - label: External Links
+        name: links-external
+        widget: markdown
+        hint: "Content: business/story related links to public available material e.g. client references, stories, blog posts, press releases which are related to the use case / demo. Format: list of links preferred"
+        required: false
+      - label: Internal Links
+        name: links-internal
+        widget: markdown
+        hint: "Content: business/story related links to IBM available material e.g. GTM Sales Play, client facing deck, further readings; do not include technical related links!. Format: list of links preferred"
+        required: false
+      - label: Code & Resources
+        name: code
+        widget: markdown
+        hint: "Content: links to demo resources, must contain all links to the documentation needed for replication or further development of the use-case / demo and where to find the source-code, e.g. Github repositories. Format: (nested) list of links preferred"
+        required: false
+      - label: Deployment Instructions
+        name: deployment
+        widget: markdown
+        hint: "Content: includes information about the use-case / demo deployment, e.g. Bluemix space or links to existing documentation. Format: (nested) list preferred"
+        required: false
+      - label: Contact
+        name: contact
+        hidden: true
+        widget: markdown
+        required: false
+      - label: Body
+        name: body
+        widget: hidden
+      - label: Tags
+        name: tags
+        widget: list
+        hint: "Adding tags is entirely optional, but we may use them later to enrich the experience."
+        required: false
+  
 
 
