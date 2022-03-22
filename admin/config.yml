@@ -80,7 +80,7 @@ collections:
         collection: "sme"
         multiple: true
         search_fields: ["title"]
-        value_field: "*"
+        value_field: "title"
         display_fields: ["title"]
 
   - name: demos
