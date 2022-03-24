@@ -1,15 +1,15 @@
 {
   "alternative-contact": {
     "full-name": "name",
-    "email": "email@gmail.com"
+    "email": "emael"
   },
   "is-executive": true,
   "additional-information": {
     "focus": [
       "Automotive, aerospace, and defense",
       "Consumer",
-      "Chemicals & Petroleum",
-      "Banking and financial markets"
+      "Banking and financial markets",
+      "Chemicals & Petroleum"
     ]
   },
   "job-title": "Developer ",
